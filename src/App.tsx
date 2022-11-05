@@ -5,7 +5,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <div>
+      <div className="inline-flex">
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
         </a>
@@ -14,7 +14,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React + TailwindCSS</h1>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>{" "}
+      <h1 className="text-3xl font-bold underline">1337!</h1>
       <div className="card"></div>
     </div>
   );
