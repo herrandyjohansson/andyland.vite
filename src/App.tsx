@@ -10,33 +10,121 @@ function App() {
       </div>
 
       <div className="main-wrapper">
-        <div className="grid grid-cols-2 gap-5">
-          <Card
-            temperature={"-2"}
-            icon={<BsFillCloudRainHeavyFill />}
-            name={"oslo"}
-          />
-          <Card
-            temperature={"8"}
-            icon={<BsSunFill size={44} color={"#FFE168"} />}
-            name={"linköping"}
-          />
+        <div className="grid grid-cols-2 grid-rows-2 gap-5">
+          <div>
+            <CardWeather
+              temperature={"-10"}
+              icon={<BsFillCloudRainHeavyFill />}
+              name={"oslo"}
+            />
+          </div>
+          <div>
+            <CardWeather
+              temperature={"-10"}
+              icon={<BsFillCloudRainHeavyFill />}
+              name={"oslo"}
+            />
+          </div>
+          <div className="col-span-2">
+            <CardWeather
+              temperature={"-23"}
+              icon={<BsFillCloudRainHeavyFill />}
+              name={"oslo"}
+            />
+          </div>
+          <div>
+            <CardWeather
+              temperature={"14"}
+              icon={<BsFillCloudRainHeavyFill />}
+              name={"oslo"}
+            />
+          </div>
+          <div className="">
+            <CardWeather
+              temperature={"-7"}
+              icon={<BsFillCloudRainHeavyFill />}
+              name={"oslo"}
+            />
+          </div>
+          <div>
+            <CardWeather
+              temperature={"-6"}
+              icon={<BsFillCloudRainHeavyFill />}
+              name={"oslo"}
+            />
+          </div>
+          <div>
+            <CardWeather
+              temperature={"-2"}
+              icon={<BsFillCloudRainHeavyFill />}
+              name={"oslo"}
+            />
+          </div>
+          <div>
+            <CardWeather
+              temperature={"-10"}
+              icon={<BsFillCloudRainHeavyFill />}
+              name={"oslo"}
+            />
+          </div>
+          <div>
+            <CardWeather
+              temperature={"-10"}
+              icon={<BsFillCloudRainHeavyFill />}
+              name={"oslo"}
+            />
+          </div>
+
+          <div>
+            <CardWeather
+              temperature={"-2"}
+              icon={<BsFillCloudRainHeavyFill />}
+              name={"oslo"}
+            />
+          </div>
+          <div>
+            <CardWeather
+              temperature={"33"}
+              icon={<BsFillCloudRainHeavyFill />}
+              name={"oslo"}
+            />
+          </div>
+          <div>
+            <CardWeather
+              temperature={"-1"}
+              icon={<BsFillCloudRainHeavyFill />}
+              name={"oslo"}
+            />
+          </div>
+          <div>
+            <CardWeather
+              temperature={"-17"}
+              icon={<BsFillCloudRainHeavyFill />}
+              name={"oslo"}
+            />
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-const Card = ({ temperature, icon, name }: any) => {
+const CardWeather = ({ temperature, icon, name }: any) => {
   return (
     <div>
       <div className="rounded-tr-3xl rounded-tl-3xl bg-grey-900 text-center uppercase text-xs p-1 tracking-widest">
         {name}
       </div>
       <div className="rounded-br-3xl rounded-bl-3xl bg-grey-800 p-4">
-        <div className="flex justify-between mx-4">
+        <div className="flex justify-between mx-4 mt-10 mb-10">
           <div className="text-5xl">{icon}</div>
-          <div className="text-5xl">{temperature} °C</div>
+          <div className="text-7xl flex">
+            {temperature}
+            <span className="text-lg ml-2">
+              <span>°</span>
+              <span className="">C</span>
+            </span>
+          </div>
         </div>
       </div>
     </div>

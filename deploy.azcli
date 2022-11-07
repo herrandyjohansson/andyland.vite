@@ -1,0 +1,3 @@
+#https://learn.microsoft.com/en-us/azure/app-service/deploy-zip?tabs=powershell
+
+Publish-AzWebApp -ResourceGroupName Default-Web-WestUS -Name MyApp -ArchivePath <zip-package-path>
