@@ -5,6 +5,7 @@ import Dashboard from "./components/Dashboard";
 import { Weather } from "./components/Weather";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Ticktick } from "./components/Ticktick";
 
 function App() {
   const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ function App() {
                 path="maps"
                 element={<h2 className="bg-grey-300">asd</h2>}
               />
+              <Route path="ticktick" element={<Ticktick />} />
             </Route>
           </Routes>
         </BrowserRouter>

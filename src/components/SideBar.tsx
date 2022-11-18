@@ -1,18 +1,11 @@
 import { MdDashboard } from "react-icons/md";
 import { WiCloud } from "react-icons/wi";
 import { BsMap } from "react-icons/bs";
+import { AiFillFire } from "react-icons/ai";
+import { TiTickOutline } from "react-icons/ti";
 import { Link, Outlet } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import Api from "../utils/api";
 
 const SideBar = () => {
-  const query = useQuery(["users"], () => {
-    return Api.fetchTodos();
-  });
-
-  console.log(query && query.data);
-
   return (
     <>
       <div className="flex bg-grey-900 text-green-400 fixed top-0 h-screen flex-col shadow w-20">
@@ -34,9 +27,13 @@ const SideBar = () => {
                 <SideBarIcon icon={<BsMap size={28} />} />
               </Link>
             </li>
+            <li>
+              <Link to="/ticktick">
+                <SideBarIcon icon={<TiTickOutline size={28} />} />
+              </Link>
+            </li>
           </ul>
         </nav>
-        {query && JSON.stringify(query.data)}
       </div>
       <div className="main-wrapper">
         <Outlet />
