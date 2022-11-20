@@ -16,13 +16,49 @@ export default class Api {
     return axios
       .get(`${API_BASE_URL}/api/Weather/weatherLocationsList`)
       .then((res) => {
-        return res.data.filter(
-          (item: WeatherLocation) =>
-            item.location.toLocaleLowerCase() === "oslo" ||
-            item.location.toLocaleLowerCase() === "malmö" ||
-            item.location.toLocaleLowerCase() === "linköping" ||
-            item.location.toLocaleLowerCase() === "kiruna"
-        );
+        let orderResult = res.data.map((locationItem: WeatherLocation) => {
+          const orderSortingArray: any = [
+            {
+              location: "oslo",
+              order: 1,
+            },
+            {
+              location: "malmö",
+              order: 3,
+            },
+            {
+              location: "galdhopiggen",
+              order: 2,
+            },
+            {
+              location: "kiruna",
+              order: 4,
+            },
+            {
+              location: "linköping",
+              order: 5,
+            },
+            {
+              location: "stockholm",
+              order: 6,
+            },
+          ];
+
+          let match = orderSortingArray.find(
+            (x: any) => x.location === locationItem.location.toLocaleLowerCase()
+          );
+
+          if (match) {
+            return {
+              ...locationItem,
+              order: match.order,
+            };
+          }
+
+          return locationItem;
+        });
+
+        return orderResult.sort((a: any, b: any) => a.order - b.order);
       });
   }
   public static fetchFunnyCat() {

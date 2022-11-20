@@ -5,6 +5,7 @@ import { AiFillFire } from "react-icons/ai";
 import { TiTickOutline } from "react-icons/ti";
 import { Link, Outlet } from "react-router-dom";
 import { SiHotjar } from "react-icons/si";
+import { BsFillCalendarCheckFill } from "react-icons/bs";
 
 const SideBar = () => {
   return (
@@ -23,11 +24,11 @@ const SideBar = () => {
                 <SideBarIcon icon={<SiHotjar size={42} />} />
               </Link>
             </li>
-            {/* <li>
-              <Link to="/maps">
-                <SideBarIcon icon={<BsMap size={28} />} />
+            <li>
+              <Link to="/calendar">
+                <SideBarIcon icon={<BsFillCalendarCheckFill size={28} />} />
               </Link>
-            </li> */}
+            </li>
             <li>
               <Link to="/ticktick">
                 <SideBarIcon icon={<TiTickOutline size={28} />} />

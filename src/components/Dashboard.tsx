@@ -9,11 +9,13 @@ import {
 import DateUtils from "../utils/date";
 import { SaunaCard } from "./SaunaCard";
 import { Cats } from "./Cats";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
 
 const Dashboard: React.FC = () => {
   const {
     data: weatherData,
-    isFetching: isWeatherDataFetching,
     isFetched: isWeatherFetched,
     isLoading: isWeatherLoading,
   } = useQuery<WeatherLocation[]>(["weather"], Api.fetchWeatherData, {
@@ -27,22 +29,22 @@ const Dashboard: React.FC = () => {
           <div className="grid grid-cols-2 grid-rows-2 gap-5 cursor-pointer">
             <WeatherCardLoading />
             <WeatherCardLoading />
-            <WeatherCardLoading />
-            <WeatherCardLoading />
           </div>
         )}
         {isWeatherFetched && (
-          <div className="grid grid-cols-2 grid-rows-2 gap-5 cursor-pointer">
+          <Swiper spaceBetween={50} slidesPerView={2}>
             {weatherData?.map((location) => {
               return (
-                <WeatherCard
-                  key={location.location}
-                  icon={WeatherCardIconColorPicker(location.temperature)}
-                  item={location}
-                />
+                <SwiperSlide>
+                  <WeatherCard
+                    key={location.location}
+                    icon={WeatherCardIconColorPicker(location.temperature)}
+                    item={location}
+                  />
+                </SwiperSlide>
               );
             })}
-          </div>
+          </Swiper>
         )}
       </section>
       <section id="cats">
