@@ -6,6 +6,10 @@ body {
   font-family: "Fira Code", monospace;
 }
 
+.cats {
+  height: 35vh;
+}
+
 @layer components {
   .sidebar-icon {
     @apply flex items-center justify-center 

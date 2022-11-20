@@ -6,6 +6,7 @@ import { Weather } from "./components/Weather";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Ticktick } from "./components/Ticktick";
+import SaunaPage from "./components/SaunaPage";
 
 function App() {
   const queryClient = new QueryClient();
@@ -18,11 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<SideBar />}>
               <Route path="dashboard" element={<Dashboard />} />
-              <Route path="weather" element={<Weather />} />
-              <Route
-                path="maps"
-                element={<h2 className="bg-grey-300">asd</h2>}
-              />
+              <Route path="sukkerbiten" element={<SaunaPage />} />
               <Route path="ticktick" element={<Ticktick />} />
             </Route>
           </Routes>

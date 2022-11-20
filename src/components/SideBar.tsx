@@ -4,6 +4,7 @@ import { BsMap } from "react-icons/bs";
 import { AiFillFire } from "react-icons/ai";
 import { TiTickOutline } from "react-icons/ti";
 import { Link, Outlet } from "react-router-dom";
+import { SiHotjar } from "react-icons/si";
 
 const SideBar = () => {
   return (
@@ -18,15 +19,15 @@ const SideBar = () => {
             </li>
             <Divider />
             <li>
-              <Link to="/weather">
-                <SideBarIcon icon={<WiCloud size={42} />} />
+              <Link to="/sukkerbiten">
+                <SideBarIcon icon={<SiHotjar size={42} />} />
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/maps">
                 <SideBarIcon icon={<BsMap size={28} />} />
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/ticktick">
                 <SideBarIcon icon={<TiTickOutline size={28} />} />
