@@ -7,9 +7,11 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Ticktick } from "./components/Ticktick";
 import SaunaPage from "./components/SaunaPage";
 import Calendar from "./components/Calendar";
+import SwiperCore, { Autoplay } from "swiper";
 
 function App() {
   const queryClient = new QueryClient();
+  SwiperCore.use([Autoplay]);
 
   return (
     <div className="relative top-0 h-screen">

@@ -12,6 +12,7 @@ import { Cats } from "./Cats";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/autoplay";
 
 const Dashboard: React.FC = () => {
   const {
@@ -32,7 +33,11 @@ const Dashboard: React.FC = () => {
           </div>
         )}
         {isWeatherFetched && (
-          <Swiper spaceBetween={50} slidesPerView={2}>
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={2}
+            autoplay={{ delay: 5000 }}
+          >
             {weatherData?.map((location) => {
               return (
                 <SwiperSlide>

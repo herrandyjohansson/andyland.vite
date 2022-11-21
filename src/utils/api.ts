@@ -27,7 +27,7 @@ export default class Api {
               order: 3,
             },
             {
-              location: "galdhopiggen",
+              location: "Piggen",
               order: 2,
             },
             {
@@ -35,11 +35,11 @@ export default class Api {
               order: 4,
             },
             {
-              location: "linköping",
+              location: "Linkan",
               order: 5,
             },
             {
-              location: "stockholm",
+              location: "Sthlm",
               order: 6,
             },
           ];

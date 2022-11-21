@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       letterSpacing: {
-        widest: "1.25em",
+        widest: "0.90em",
       },
       colors: {
         grey: {
