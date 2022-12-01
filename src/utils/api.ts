@@ -16,7 +16,7 @@ export default class Api {
     return axios
       .get(`${API_BASE_URL}/api/Weather/weatherLocationsList`)
       .then((res) => {
-        let orderResult = res.data.map((locationItem: WeatherLocation) => {
+        const orderResult = res.data.map((locationItem: WeatherLocation) => {
           const orderSortingArray: any = [
             {
               location: "oslo",
@@ -44,7 +44,7 @@ export default class Api {
             },
           ];
 
-          let match = orderSortingArray.find(
+          const match = orderSortingArray.find(
             (x: any) => x.location === locationItem.location.toLocaleLowerCase()
           );
 

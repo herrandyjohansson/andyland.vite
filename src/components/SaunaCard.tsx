@@ -50,7 +50,7 @@ export const SaunaCard: React.FC<Props> = ({ date }) => {
             const dayjsCorrectedTimeslot = dayjs(timeslot).add(-1, "h");
 
             const getCorrectTimeSlotFormatting = (timeslot: any) => {
-              var date = dayjs(timeslot).format("m");
+              const date = dayjs(timeslot).format("m");
               return date === "30"
                 ? dayjsCorrectedTimeslot.format("H" + ".5")
                 : dayjsCorrectedTimeslot.format("HH");
