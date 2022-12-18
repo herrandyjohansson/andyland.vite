@@ -1,4 +1,5 @@
 import Api from "../utils/api";
+
 import { useQuery } from "@tanstack/react-query";
 import { WeatherLocation } from "../models/weather";
 import {
@@ -13,6 +14,25 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
+import { useReducer } from "react";
+
+enum CountActionKind {
+  Increment = "increment",
+  Decrement = "decrement",
+}
+
+interface CountState {
+  count: number;
+}
+interface CountAction {
+  type: CountActionKind;
+  payload: number;
+}
+interface Todo {
+  id: number;
+  title: string;
+  complete: boolean;
+}
 
 const Dashboard: React.FC = () => {
   const {

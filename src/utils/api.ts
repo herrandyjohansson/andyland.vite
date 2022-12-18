@@ -1,11 +1,12 @@
 import axios from "axios";
+import { Todo } from "../models/todo";
 import { WeatherLocation } from "../models/weather";
 
 const API_BASE_URL = "https://andyland-api.azurewebsites.net";
 
 export default class Api {
   public static fetchTodos() {
-    return axios.get("https://dummyjson.com/users").then((res) => res.data);
+    return axios.get(`${API_BASE_URL}/api/todo`).then((res) => res.data);
   }
   public static fetchAvailableSaunaTimesForSpecificDate(date: string) {
     return axios
@@ -65,5 +66,20 @@ export default class Api {
     return axios
       .get(`https://api.thecatapi.com/v1/images/search`)
       .then((res) => res.data);
+  }
+
+  public static addTodo(_description: string, _todoListId: number) {
+    let addTodo = {
+      description: _description,
+      todoListId: _todoListId,
+    };
+
+    return axios
+      .post(`${API_BASE_URL}/api/todo`, addTodo)
+      .then((res) => res.data);
+  }
+
+  public static completingTodoById(id: number) {
+    return axios.put(`${API_BASE_URL}/api/todo/${id}`).then((res) => res.data);
   }
 }

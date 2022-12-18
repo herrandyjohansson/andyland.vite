@@ -1,34 +1,39 @@
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
 import React from "react";
+import { Todo } from "../models/todo";
+import Api from "../utils/api";
 
 interface Props {
-  remove: (index: number) => void;
   todo: Todo;
 }
 
-interface Todo {
-  id: number;
-  task: string;
-  completed: boolean;
-}
-const TicktickCheckbox: React.FC<Props> = ({ todo, remove }) => {
+const TicktickCheckbox: React.FC<Props> = ({ todo }) => {
+  const queryClient = useQueryClient();
+
   const [svgColor, setSvgColor] = React.useState("#4f545c");
-  const handleClick = (id: number) => {
-    remove(id);
+  const deleteTodo = (id: number) => {
+    mutation.mutate(todo);
   };
+
+  const mutation = useMutation({
+    mutationFn: (newTodo: Todo) => {
+      return Api.completingTodoById(newTodo.id);
+    },
+    onSuccess: (data) => {
+      queryClient.refetchQueries(["todos"]);
+    },
+  });
 
   return (
     <>
       <div className="flex items-center mr-4 mb-2">
         <input
-          key={todo.task}
-          defaultChecked={todo.completed}
+          key={todo.id}
           type="checkbox"
           onClick={(e) => {
             setSvgColor("rgb(22 163 74");
-            // POST delete to API
-            setTimeout(() => {
-              handleClick(todo.id);
-            }, 400);
+            deleteTodo(todo.id);
           }}
           className="opacity-0 absolute w-8 h-8"
         />
@@ -37,7 +42,7 @@ const TicktickCheckbox: React.FC<Props> = ({ todo, remove }) => {
         >
           <TickSvgCheckbox color={svgColor} />
         </div>
-        <label>{todo.task}</label>
+        <label>{todo.description}</label>
       </div>
     </>
   );
