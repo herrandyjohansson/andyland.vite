@@ -15,6 +15,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { useReducer } from "react";
+import Countdown from "./Countdown";
 
 enum CountActionKind {
   Increment = "increment",
@@ -76,6 +77,9 @@ const Dashboard: React.FC = () => {
         <div>
           <Cats />
         </div>
+      </section>
+      <section id="countdown">
+        <Countdown />
       </section>
       <section id="sauna">
         <SaunaCard date={DateUtils.getTodaysDatePlusDays(1)} />

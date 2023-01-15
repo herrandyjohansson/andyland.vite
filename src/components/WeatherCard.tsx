@@ -31,12 +31,11 @@ export const WeatherCard: React.FC<Props> = ({ icon, item }) => {
   return (
     <div className="shadow-xl">
       <div className="rounded-tr-3xl rounded-tl-3xl bg-grey-900 text-center uppercase text-xl p-1 tracking-widest">
-        <div className="flex flex-row items-center pr-2 align-middle justify-center">
-          <span className="absolute left-4">{icon}</span>
+        <div className="flex flex-row items-center pr-2 align-middle justify-center ">
           <span className="flex">{item.location}</span>
         </div>
       </div>
-      <div className="rounded-br-3xl rounded-bl-3xl bg-grey-800 p-4 h-52 flex justify-center items-center center">
+      <div className="rounded-br-3xl rounded-bl-3xl p-4 h-52 flex justify-center items-center center dotted-bg">
         <div className="text-7xl">{item.temperature}°</div>
       </div>
     </div>

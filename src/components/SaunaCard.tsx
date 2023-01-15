@@ -34,7 +34,7 @@ export const SaunaCard: React.FC<Props> = ({ date }) => {
 
   return (
     <div
-      className="bg-grey-800 rounded-3xl p-4 mt-3"
+      className="rounded-3xl p-4 mt-3 dotted-bg"
       onClick={() => {
         refetch();
       }}

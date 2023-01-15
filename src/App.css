@@ -10,6 +10,19 @@ body {
   height: 35vh;
 }
 
+/*   background-color: radial-gradient(
+    rgba(27, 183, 0, 0.2) 0.5px,
+    rgb(143, 176, 240) 0.5px
+  );*/
+
+.dotted-bg {
+  background-image: radial-gradient(
+    rgb(166, 173, 186, 0) 0.8px,
+    rgb(47, 49, 54) 0.5px
+  );
+  background-size: 5px 5px;
+}
+
 @layer components {
   .sidebar-icon {
     @apply flex items-center justify-center 
